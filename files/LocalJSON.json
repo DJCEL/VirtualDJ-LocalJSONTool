@@ -1,6 +1,6 @@
 [
 	{
-		"uniqueId" : "1",
+		"uniqueId" : "id1",
 		"title" : "title1",
 		"artist" : "artist1",
 		"remix " : "",
@@ -17,7 +17,7 @@
 		"isKaraoke" : false
 	},
 	{
-		"uniqueId" : "2",
+		"uniqueId" : "id2",
 		"title" : "title2",
 		"artist" : "artist2",
 		"remix " : "",
