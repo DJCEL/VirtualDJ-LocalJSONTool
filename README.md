@@ -8,3 +8,5 @@ You need to replace this string with your actual Windows username:
 ```python
 username = "YourWindowsUsername"
 ```
+
+LocalJSONTool.sln and LocalJSONTool.pyproj files are used for Visual Studio 2022 but you can use your own Python IDE (Spyder, ...).
