@@ -94,10 +94,14 @@ def LocalJSON_remove_duplicates(strFilepath_In, strFilepath_Out):
 def main():
     username = "YourWindowsUsername" # Replace with your actual Windows username
     
-    strFolder =  "C:\\Users\\" + username + "\\AppData\\Local\\VirtualDJ\\Plugins64\\OnlineSources\\"
+    strFolder1 =  "C:\\Users\\" + username + "\\AppData\\Local\\VirtualDJ\\Plugins64\\OnlineSources\\"
 
-    strFilepath_In = strFolder + "LocalJSON.json"
-    strFilepath_Out = strFolder + "LocalJSON_fixed.json"
+    current_directory = os.path.dirname(os.path.abspath(__file__))
+    parent_directory = os.path.abspath(os.path.join(current_directory, os.pardir))
+    strFolder2 =   parent_directory + "\\files\\"
+    
+    strFilepath_In = strFolder1 + "LocalJSON.json"
+    strFilepath_Out = strFolder1 + "LocalJSON_fixed.json"
 
     if(os.path.isfile(strFilepath_In) == False):
          print("The following file does not exist:")
