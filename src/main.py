@@ -103,9 +103,9 @@ def main():
     username = "YourWindowsUsername" # Replace with your actual Windows username
 
     #LocalJSON_readFile_method_json(username)
-    #LocalJSON_readFile_method_pandas(username)
+    LocalJSON_readFile_method_pandas(username)
     #LocalJSON_sortSongs(username)
-    LocalJSON_list_duplicates(username)
+    #LocalJSON_list_duplicates(username)
     #LocalJSON_remove_duplicates(username)
 
 #----------------------------------------------------------------------------------------------------------------------------------
