@@ -93,8 +93,8 @@ def LocalJSON_remove_duplicates(strFilepath_In, strFilepath_Out):
 #----------------------------------------------------------------------------------------------------------------------------------
 def main():
     # VirtualDJ folder
-    AppDatalocal = os.getenv('LOCALAPPDATA')
-    strFolder1 =  AppDatalocal + "\\VirtualDJ\\Plugins64\\OnlineSources\\"
+    strAppDatalocal = os.getenv('LOCALAPPDATA')
+    strFolder1 =  strAppDatalocal + "\\VirtualDJ\\Plugins64\\OnlineSources\\"
     
     # Project folder
     current_directory = os.path.dirname(os.path.abspath(__file__))
