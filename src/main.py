@@ -98,7 +98,7 @@ def main():
     strFilepath_Out = "C:\\Users\\" + username + "\\AppData\\Local\\VirtualDJ\\Plugins64\\OnlineSources\\LocalJSON_fixed.json"
 
      if(os.path.isfile(strFilepath_In) == False):
-         print("The following file does not exist:\n")
+         print("The following file does not exist:")
          print(strFilepath_In)
          print("\nPlease check 'strFilepath_In' and try again.\n")
          return
