@@ -72,7 +72,6 @@ def LocalJSON_sortSongs(username:str):
 #----------------------------------------------------------------------------------------------------------------------------------
 def LocalJSON_list_duplicates(username:str):
      strFilepath_In = "C:\\Users\\" + username + "\\AppData\\Local\\VirtualDJ\\Plugins64\\OnlineSources\\LocalJSON.json"
-     strFilepath_Out = "C:\\Users\\" + username + "\\AppData\\Local\\VirtualDJ\\Plugins64\\OnlineSources\\LocalJSON_fixed.json"
      
      df_Songs = pd.read_json(strFilepath_In)
 
