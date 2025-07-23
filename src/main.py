@@ -1,9 +1,9 @@
 import json
+from string import printable
 import pandas as pd
 
 #----------------------------------------------------------------------------------------------------------------------------------
-def LocalJSON_readFile_method_json(username:str):
-    strFilepath_In = "C:\\Users\\" + username + "\\AppData\\Local\\VirtualDJ\\Plugins64\\OnlineSources\\LocalJSON.json"
+def LocalJSON_readFile_method_json(strFilepath_In):
 
     # Open the JSON file and load its content
     fp = open(strFilepath_In, "r", encoding="utf8")
@@ -30,8 +30,7 @@ def LocalJSON_readFile_method_json(username:str):
     print("Songs[0] =",Songs[0])
     print("\n")
 #----------------------------------------------------------------------------------------------------------------------------------
-def LocalJSON_readFile_method_pandas(username:str):
-    strFilepath_In = "C:\\Users\\" + username + "\\AppData\\Local\\VirtualDJ\\Plugins64\\OnlineSources\\LocalJSON.json"
+def LocalJSON_readFile_method_pandas(strFilepath_In):
 
     # Read the JSON file into a pandas DataFrame
     df_Songs = pd.read_json(strFilepath_In)
@@ -55,24 +54,9 @@ def LocalJSON_readFile_method_pandas(username:str):
 
     print("### Preview of the five first songs:\n")
     print(df_Songs.head(5))
-
 #----------------------------------------------------------------------------------------------------------------------------------
-def LocalJSON_sortSongs(username:str):
-     strFilepath_In = "C:\\Users\\" + username + "\\AppData\\Local\\VirtualDJ\\Plugins64\\OnlineSources\\LocalJSON.json"
-     strFilepath_Out = "C:\\Users\\" + username + "\\AppData\\Local\\VirtualDJ\\Plugins64\\OnlineSources\\LocalJSON_fixed.json"
-     
-     df_Songs = pd.read_json(strFilepath_In)
-
-     df_Songs_sorted = df_Songs.sort_values(by='uniqueId', ascending=False)
-
-     df_Songs_sorted['uniqueId'] = df_Songs_sorted['uniqueId'].astype(str)
-
-     json_str = df_Songs_sorted.to_json(strFilepath_Out, orient='records')
-
-#----------------------------------------------------------------------------------------------------------------------------------
-def LocalJSON_list_duplicates(username:str):
-     strFilepath_In = "C:\\Users\\" + username + "\\AppData\\Local\\VirtualDJ\\Plugins64\\OnlineSources\\LocalJSON.json"
-     
+def LocalJSON_list_duplicates(strFilepath_In):
+    
      df_Songs = pd.read_json(strFilepath_In)
 
      # Find duplicates based on 'uniqueId'
@@ -85,9 +69,18 @@ def LocalJSON_list_duplicates(username:str):
         print(duplicates)
 
 #----------------------------------------------------------------------------------------------------------------------------------
-def LocalJSON_remove_duplicates(username:str):
-     strFilepath_In = "C:\\Users\\" + username + "\\AppData\\Local\\VirtualDJ\\Plugins64\\OnlineSources\\LocalJSON.json"
-     strFilepath_Out = "C:\\Users\\" + username + "\\AppData\\Local\\VirtualDJ\\Plugins64\\OnlineSources\\LocalJSON_fixed.json"
+def LocalJSON_sortSongs(strFilepath_In, strFilepath_Out):
+    
+     df_Songs = pd.read_json(strFilepath_In)
+
+     df_Songs_sorted = df_Songs.sort_values(by='uniqueId', ascending=False)
+
+     df_Songs_sorted['uniqueId'] = df_Songs_sorted['uniqueId'].astype(str)
+
+     json_str = df_Songs_sorted.to_json(strFilepath_Out, orient='records')
+
+#----------------------------------------------------------------------------------------------------------------------------------
+def LocalJSON_remove_duplicates(strFilepath_In, strFilepath_Out):
      
      df_Songs = pd.read_json(strFilepath_In)
 
@@ -100,12 +93,14 @@ def LocalJSON_remove_duplicates(username:str):
 #----------------------------------------------------------------------------------------------------------------------------------
 def main():
     username = "YourWindowsUsername" # Replace with your actual Windows username
+    strFilepath_In = "C:\\Users\\" + username + "\\AppData\\Local\\VirtualDJ\\Plugins64\\OnlineSources\\LocalJSON.json"
+    strFilepath_Out = "C:\\Users\\" + username + "\\AppData\\Local\\VirtualDJ\\Plugins64\\OnlineSources\\LocalJSON_fixed.json"
 
-    #LocalJSON_readFile_method_json(username)
-    LocalJSON_readFile_method_pandas(username)
-    #LocalJSON_sortSongs(username)
-    #LocalJSON_list_duplicates(username)
-    #LocalJSON_remove_duplicates(username)
+    #LocalJSON_readFile_method_json(strFilepath_In)
+    LocalJSON_readFile_method_pandas(strFilepath_In)
+    #LocalJSON_list_duplicates(strFilepath_In)
+    #LocalJSON_sortSongs(strFilepath_In, strFilepath_Out)
+    #LocalJSON_remove_duplicates(strFilepath_In, strFilepath_Out)
 
 #----------------------------------------------------------------------------------------------------------------------------------
 if __name__ == "__main__":
