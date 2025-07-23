@@ -5,4 +5,6 @@ Tool written in Python to be used for [VirtualDJ-LocalJSON-Win64](https://github
 It enables to read/modify the LocalJSON.json file used by the plugin LocalJSON.dll
 
 You need to replace this string with your actual Windows username:
+```python
 username = "YourWindowsUsername"
+```
