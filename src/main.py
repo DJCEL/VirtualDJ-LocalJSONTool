@@ -92,6 +92,7 @@ def LocalJSON_remove_duplicates(strFilepath_In, strFilepath_Out):
 #----------------------------------------------------------------------------------------------------------------------------------
 def main():
     username = "YourWindowsUsername" # Replace with your actual Windows username
+    
     strFilepath_In = "C:\\Users\\" + username + "\\AppData\\Local\\VirtualDJ\\Plugins64\\OnlineSources\\LocalJSON.json"
     strFilepath_Out = "C:\\Users\\" + username + "\\AppData\\Local\\VirtualDJ\\Plugins64\\OnlineSources\\LocalJSON_fixed.json"
 
