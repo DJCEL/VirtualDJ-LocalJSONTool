@@ -98,10 +98,10 @@ def main():
     strFilepath_Out = "C:\\Users\\" + username + "\\AppData\\Local\\VirtualDJ\\Plugins64\\OnlineSources\\LocalJSON_fixed.json"
 
      if(os.path.isfile(strFilepath_In) == False):
-     print("The following file does not exist:\n")
-     print(strFilepath_In)
-     print("\nPlease check 'strFilepath_In' and try again.\n")
-     return
+         print("The following file does not exist:\n")
+         print(strFilepath_In)
+         print("\nPlease check 'strFilepath_In' and try again.\n")
+         return
     
     #LocalJSON_readFile_method_json(strFilepath_In)
     LocalJSON_readFile_method_pandas(strFilepath_In)
