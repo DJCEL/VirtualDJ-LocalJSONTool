@@ -10,4 +10,4 @@ username = "YourWindowsUsername"
 ```
 
 
-LocalJSONTool.sln and LocalJSONTool.pyproj files are used for Visual Studio 2022 but you can use your own Python IDE (Spyder, ...).
+The 'LocalJSONTool.sln' and 'LocalJSONTool.pyproj' files are created by Visual Studio 2022 but you can use your own Python IDE (Spyder, ...).
