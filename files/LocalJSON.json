@@ -1,0 +1,34 @@
+[
+	{
+		"artist" : "artist1",
+		"bpm" : 0.0,
+		"comment" : "",
+		"coverUrl" : "https://url1a.jpg",
+		"genre" : "",
+		"isKaraoke" : false,
+		"isVideo" : false,
+		"key" : 0,
+		"label" : "",
+		"length" : 0.0,
+		"remix " : "",
+		"streamUrl" : "https://url1b.mp3",
+		"title" : "title1",
+		"uniqueId" : "1"
+	},
+	{
+		"artist" : "artist2",
+		"bpm" : 0.0,
+		"comment" : "",
+		"coverUrl" : "https://url2a.jpg",
+		"genre" : "",
+		"isKaraoke" : false,
+		"isVideo" : false,
+		"key" : 0,
+		"label" : "",
+		"length" : 0.0,
+		"remix " : "",
+		"streamUrl" : "https://url2b.mp3",
+		"title" : "title2",
+		"uniqueId" : "2"
+	}
+]
