@@ -94,16 +94,17 @@ def LocalJSON_remove_duplicates(strFilepath_In, strFilepath_Out):
 def main():
     # VirtualDJ folder
     strAppDatalocal = os.getenv('LOCALAPPDATA')
-    strFolder1 =  strAppDatalocal + "\\VirtualDJ\\Plugins64\\OnlineSources\\"
+    strFolder_prod =  strAppDatalocal + "\\VirtualDJ\\Plugins64\\OnlineSources\\"
     
     # Project folder
     current_directory = os.path.dirname(os.path.abspath(__file__))
     parent_directory = os.path.abspath(os.path.join(current_directory, os.pardir))
-    strFolder2 =   parent_directory + "\\files\\"
+    strFolder_test = parent_directory + "\\files\\"
     
     # Files
-    strFilepath_In = strFolder1 + "LocalJSON.json"
-    strFilepath_Out = strFolder1 + "LocalJSON_fixed.json"
+    strFilepath_In = strFolder_prod + "LocalJSON.json"
+    #strFilepath_In = strFolder_test + "LocalJSON.json"
+    strFilepath_Out = strFolder_test + "LocalJSON_fixed.json"
 
     if(os.path.isfile(strFilepath_In) == False):
          print("The following file does not exist:")
