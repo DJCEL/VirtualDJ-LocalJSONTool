@@ -92,14 +92,16 @@ def LocalJSON_remove_duplicates(strFilepath_In, strFilepath_Out):
      json_str = df_Songs.to_json(strFilepath_Out, orient='records')
 #----------------------------------------------------------------------------------------------------------------------------------
 def main():
-    username = "YourWindowsUsername" # Replace with your actual Windows username
+    # VirtualDJ folder
+    AppDatalocal = os.getenv('LOCALAPPDATA')
+    strFolder1 =  AppDatalocal + "\\VirtualDJ\\Plugins64\\OnlineSources\\"
     
-    strFolder1 =  "C:\\Users\\" + username + "\\AppData\\Local\\VirtualDJ\\Plugins64\\OnlineSources\\"
-
+    # Project folder
     current_directory = os.path.dirname(os.path.abspath(__file__))
     parent_directory = os.path.abspath(os.path.join(current_directory, os.pardir))
     strFolder2 =   parent_directory + "\\files\\"
     
+    # Files
     strFilepath_In = strFolder1 + "LocalJSON.json"
     strFilepath_Out = strFolder1 + "LocalJSON_fixed.json"
 
